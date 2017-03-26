@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="ReadMe.txt" />
     <Content Include="Scripts\functionsWithParsers.js" />
     <Content Include="Scripts\jquery-3.2.0.min.js" />
     <Content Include="Scripts\Underscore.js" />
