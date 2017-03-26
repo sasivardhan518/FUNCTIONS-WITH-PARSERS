@@ -13,8 +13,18 @@ namespace FunctionsWithParsers.Models
     {
         public static void CreateExcelSheetForDatatble()
         {
-            var fileName =  @"D:/ExcelFiles/Datatable.xls";
+            var path = @"D:/ExcelFiles1/";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            var fileName =  path+"Datatable.xls";
             var file = new FileInfo(fileName);
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
             var package = new OfficeOpenXml.ExcelPackage(file);
             var worksheet = package.Workbook.Worksheets.Add("GridData");
             worksheet.Cells["A1"].LoadFromDataTable(DataTableForGrid.dt, true);
